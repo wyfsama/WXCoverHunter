@@ -1,0 +1,29 @@
+{
+  "manifest_version": 3,
+  "name": "公众号封面获取",
+  "version": "1.0",
+  "description": "获取微信公众号文章封面图片",
+  "permissions": [
+    "activeTab",
+    "scripting",
+    "tabs",
+    "downloads"
+  ],
+  "action": {
+    "default_popup": "popup.html",
+    "default_icon": {
+      "16": "images/icon16.png",
+      "48": "images/icon48.png",
+      "128": "images/icon128.png"
+    }
+  },
+  "background": {
+    "service_worker": "background.js"
+  },
+  "content_scripts": [
+    {
+      "matches": ["*://*.weixin.qq.com/*"],
+      "js": ["content.js"]
+    }
+  ]
+} 
